@@ -6,7 +6,6 @@
     # Glob pattern that are used to find source files to format. It is possible to specify several patterns by putting each on a new line.
 
     pattern: # optional, default is **/*.hs
-**/*.hs-boot
 
     # Whether to follow symbolic links.
 
