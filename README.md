@@ -43,4 +43,3 @@ Outcomes:
 
 ## What's next
 If we’re successful on all of the above, we can take the final step of using this service as a first step to putting reference scripts on-chain. (Will be easy after accomplishing all of the above!). This will also serve as a hands-on example that can be used in upcoming Dandelion PBL course.
->>>>>>> a0403e254b431f4692c62e3ffbc565bd5dcf1998
