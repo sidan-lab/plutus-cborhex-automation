@@ -1,0 +1,16 @@
+- name: Run Fourmolu
+  # You may pin to the exact commit or the version.
+  # uses: fourmolu/fourmolu-action@e3d94cc70fa37f6014e374e239ae7709357bb5a0
+  uses: fourmolu/fourmolu-action@v2
+  with:
+    # Glob pattern that are used to find source files to format. It is possible to specify several patterns by putting each on a new line.
+
+    pattern: # optional, default is **/*.hs
+**/*.hs-boot
+
+    # Whether to follow symbolic links.
+
+    follow-symbolic-links: # optional, default is true
+    # Extra arguments to pass to Fourmolu.
+
+    extra-args: # optional
