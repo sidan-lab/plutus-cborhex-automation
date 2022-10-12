@@ -3,5 +3,5 @@
 ## 0.0.0.1 -- 2022-10-12
 
 * First version. Released on an unsuspecting world.
-* branch `main` compiles locally and on a remote server; `cabal run` produces 
+* branch `main` builds locally and on a remote server; `cabal run` locally produces 
 >Hello, Haskell!
