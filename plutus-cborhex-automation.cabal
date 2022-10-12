@@ -31,6 +31,6 @@ executable plutus-cborhex-automation
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
-    build-depends:    base ^>=4.15.1.0
+    build-depends:    base 
     hs-source-dirs:   app
     default-language: Haskell2010
