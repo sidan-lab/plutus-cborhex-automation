@@ -2,9 +2,9 @@ name: Haskell CI
 
 on:
   push:
-    branches: [ "hello-docker" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "hello-docker" ]
+    branches: [ "main" ]
 
 permissions:
   contents: read
