@@ -1,10 +1,3 @@
-# here I need what?
-FROM haskell
-
-# Install dependencies
-RUN cabal update
-RUN cabal install happy yesod-bin
-
-EXPOSE 80
-
-CMD cabal repl
+FROM haskell:8.10
+RUN cabal update && cabal install pandoc citeproc
+ENTRYPOINT ["pandoc"]
