@@ -5,6 +5,7 @@
 module Utils where
 
 import           Cardano.Api                 as API
+import qualified Cardano.Api.SerialiseTextEnvelope as SAPI
 import           Cardano.Api.Shelley         (Address (..), PlutusScript (..))
 import           Cardano.Crypto.Hash.Class   (hashToBytes)
 import           Cardano.Ledger.Credential   as Ledger
@@ -68,4 +69,13 @@ writeValidator file = writeFileTextEnvelope @(PlutusScript PlutusScriptV1) file 
 writeTestingValidator :: Integer -> String -> IO (Either (FileError ()) ())
 writeTestingValidator num addr = writeValidator "scripts/testingValidator.plutus" $ SimTest.validator $ makeTestParam num addr
 
-writeExampleValidator = writeTestingValidator 123 "addr_test1qqknp3kr3y55ej9a5680w939ltpe8752zjkj67hemegmeldx8s2nlvl23f82fut92a82jytnw4k7p0esygk2p626vjdquna9wq"
+writeValidatorJSON :: Plutus.Validator -> API.PlutusScript lang
+writeValidatorJSON = PlutusScriptSerialised . SBS.toShort . LBS.toStrict . serialise . Plutus.unValidatorScript
+
+writeTestingValidatorJSON :: Integer -> String -> LBS.ByteString
+writeTestingValidatorJSON num addr = SAPI.textEnvelopeToJSON @(PlutusScript PlutusScriptV1) Nothing (writeValidatorJSON $ SimTest.validator $ makeTestParam num addr)
+-- writeExampleValidatorJSON = writeTestingValidatorJSON 123 "addr_test1qqknp3kr3y55ej9a5680w939ltpe8752zjkj67hemegmeldx8s2nlvl23f82fut92a82jytnw4k7p0esygk2p626vjdquna9wq"
+
+
+
+

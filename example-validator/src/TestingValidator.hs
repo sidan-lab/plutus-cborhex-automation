@@ -42,12 +42,13 @@ import Data.Bool (Bool(True))
 import Playground.Contract (ToSchema)
 
 data TestParam = TestParam {
-  testNumber :: !Integer,
-  testPpkh   :: !PaymentPubKeyHash
+  testNumber :: Integer,
+  testPpkh   :: PaymentPubKeyHash
   }
   deriving (Show, Generic, FromJSON, ToJSON, ToSchema)
 
 PlutusTx.makeLift ''TestParam
+PlutusTx.makeIsDataIndexed ''TestParam [('TestParam,0)]
 
 -- data TestDatum
 --   = TestDatum Integer Integer Integer
@@ -57,7 +58,7 @@ PlutusTx.makeLift ''TestParam
 
 {-# INLINEABLE mkValidator #-}
 mkValidator :: TestParam -> Integer -> () -> Plutus.ScriptContext -> Bool
-mkValidator param dat _ ctx = dat == testNumber param
+mkValidator param dat _ _ = dat == testNumber param
 
 validator :: TestParam -> Plutus.Validator
 validator param = Plutus.mkValidatorScript
