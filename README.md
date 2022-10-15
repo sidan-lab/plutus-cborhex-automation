@@ -1,3 +1,12 @@
+### TESTING
+## Getting start
+1. Make sure you have all dependencies needed, including setting up `nix`, entering `nix-shell` using `v1.0.0-alpha1` tag of `plutus-apps`.
+2. Run `cabal build` to build the modules needed
+3. Simply run `cabal run example-validator.cabal` then you have your backend setup on localhost.
+
+## The example plutus script
+This is just a demo parameterized script taking in an `Integer` and a `PaymentPubKeyHash` as parameter. Helper functions are built in order to take `Integer` and a `String` of `Bech32` address to build the PlutusV1 script.
+
 # plutus-cborhex-automation
 ### [Miro board for brainstorming](https://miro.com/app/board/uXjVPPxeTj4=/?share_link_id=943831871410)
 
