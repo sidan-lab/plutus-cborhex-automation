@@ -109,11 +109,11 @@ git clone https://github.com/input-output-hk/plutus-apps.git
 git clone https://github.com/SIDANWhatever/plutus-cborhex-automation.git
 ```
 
-4. Entering nix-shell with IOHK binaries, here we checkout latest tag `v1.0.0-alpha1`
+4. Entering nix-shell with IOHK binaries, here we checkout latest tag `7b4c1da03faf9bc35f348802fb7927231657e75`
 
 ```
 cd ~/validator-endpoint/plutus-apps
-git checkout v1.0.0-alpha1
+git checkout 7b4c1da03faf9bc35f348802fb7927231657e75
 nix-shell
 ```
 
