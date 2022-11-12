@@ -108,17 +108,9 @@ git clone https://github.com/input-output-hk/plutus-apps.git
 git clone https://github.com/SIDANWhatever/plutus-cborhex-automation.git
 ```
 
-4. Entering nix-shell with IOHK binaries, here we checkout latest tag `7b4c1da03faf9bc35f348802fb7927231657e75`
-
-```
-cd ~/validator-endpoint/plutus-apps
-git checkout 7b4c1da03faf9bc35f348802fb7927231657e75
-nix-shell
-```
-
 ## Starting the endpoints
 
-- Prior to anything started, logout the terminal, and login directly as the user where the nix-shell is installed
+1. Prior to anything started, logout the terminal, and login directly as the user where the nix-shell is installed
 
 ```
 exit
@@ -131,8 +123,23 @@ cd ~/.ssh
 ssh -i "testbuild.pem" whatever@ec2-xx-xxx-xx-xxx.us-west-2.compute.amazonaws.com
 ```
 
+2. Entering nix-shell with IOHK binaries, here we checkout latest tag `7b4c1da03faf9bc35f348802fb7927231657e75`
+
 ```
-cd ~/plutus-cborhex-automation/example-validator
+cd ~/validator-endpoint/plutus-apps
+git checkout 7b4c1da03faf9bc35f348802fb7927231657e75
+nix-shell
 ```
 
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaWIB3gDSs0cERhc2k8s9HTTHupN7mBQ9QQvjZnKOzNkXuejaiVzMCNC9qf3z8AguCEC2ZZTjExJ6G038sUEu2nRToqddKfC20SKsBpF7mYjArdBwqE0LMMzQgvkveJdUO/lZOAbjQt7KPWii6oiUjntLdYxuLkk+2twsG8hTEAUWLyhZolE+wb>
+3. Update Cabal
+
+```
+cabal update
+```
+
+4. Start the `example-validator` backend
+
+```
+cd ~/plutus-cborhex-automation/example-validator
+cabal run example-validator.cabal
+```
