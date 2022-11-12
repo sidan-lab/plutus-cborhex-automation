@@ -1,30 +1,27 @@
 # Development Documentation on Local VM Testing
 
-- Environment: MacOS M1
-- Date Nov 10 2022
+- Environment: AWS EC2
+- Date Nov 12 2022
 
-## Pre-setup
+## Setup
 
-0. Install `brew`
-1. Install `multipass`
-
-```
-brew install multipass
-```
-
-2. Initialized Ubuntu local VM
+1. Server Config
 
 ```
-multipass launch 22.04 --name testbuild --cpus 4 --disk 50G --mem 8G
+Ubuntu Server 22.04 LTS (HVM), SSD Volume Type
+Architecture 64-bit (x86)
+
+t3.large
+Family: t3   2 vCPU   8GiB Memory
+On-Demand Linux pricing: 0.0832 USD per Hour
+On-Demand Windows pricing: 0.1108USD per Hour
+
+Volume 1 (AMI Root) (Custom) 50 GiB gp2
 ```
 
-3. Enter into VM
+2. Enter into VM
 
-```
-multipass shell testbuild
-```
-
-4. Add user, make it `sudo`, change user to newly created one
+3. Add user, make it `sudo`, change user to newly created one
 
 ```
 sudo adduser whatever
@@ -115,5 +112,3 @@ cd ~/validator-endpoint/plutus-apps
 git checkout v1.0.0-alpha1
 nix-shell
 ```
-
-## Blocker here, still trying to build nix-shell on local VM
