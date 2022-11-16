@@ -16,22 +16,24 @@ In the long-term, an API for compiling plutus scripts can be served via Dandelio
 
 
 ### Milestone 0: Study the problem
-- Exploring different alternatives such as [Helios](https://github.com/Hyperion-BT/Helios)
+- Exploring different alternatives (done)
 - Testing out different Haskell backend libraries and dockerize functions for simple function to see if there is any major blocker.
-- Set the workflow for the rest of the research.
+- Set the workflow for the rest of the research. (done)
 
 
 ### Milestone 1:
 Developers can use a Docker image to create a REST endpoint that returns CBOR and Address for any pre-defined, parameterized Plutus Validator.
 Upon delivery of Docker image, code repo and documentation.
 #### Deliverables:
-- Open source repository
-- Docker Image
+- Open source repository (this repo)
+- Docker Image (on halt)
 - Developer-Facing Documentation for the following steps:
-1. How to add an arbitrary contract to Docker image
-2. How to specify Validator Parameters related to that Contract
-3. How to use local endpoint that takes Parameters and returns CBOR + Address
+1. How to add an arbitrary contract to Docker image (on halt)
+2. How to specify Validator Parameters related to that Contract (done)
+3. How to use local endpoint that takes Parameters and returns CBOR + Address (done)
 
+#### Updated 15 Nov, 2022:
+* Upon further research, as we face blocker in wrapping plutus code as docker, we shift the focus to be building a module for easy implementation of any other Plutus project. The goal is specify at [Issue 4](https://github.com/SIDANWhatever/plutus-cborhex-automation/issues/4), which upon completion this would be wrapped as a public module publish to [Hackage](https://hackage.haskell.org/packages/upload).
 
 ### Milestone 2:
 Outcomes:
@@ -43,3 +45,9 @@ Outcomes:
 
 ## What's next
 If we’re successful on all of the above, we can take the final step of using this service as a first step to putting reference scripts on-chain. (Will be easy after accomplishing all of the above!). This will also serve as a hands-on example that can be used in upcoming Dandelion PBL course.
+We also welcome any contributors on any suggestions and thoughts to make this infrastructure more accessible, and better to the community.
+
+
+## Other Resources / List of Other Related Projects
+1. [Helios](https://github.com/Hyperion-BT/Helios)
+2. [demeter.run](https://demeter.run/)
