@@ -1,4 +1,4 @@
-# Development Documentation on Local VM Testing
+# Development Documentation on Remote Server VM
 
 - Environment: AWS EC2
 - Date Nov 12 2022
