@@ -9,3 +9,5 @@ This is the directory showing the example usage of the Plutus-Cborhex-Generator 
 
 ## The example plutus script
 This is just a demo parameterized script taking in an `Integer` and a `PaymentPubKeyHash` as parameter. Helper functions are built in order to take `Integer` and a `String` of `Bech32` address to build the PlutusV1 script.
+
+## Documentation on VM Endpoints Setup Please Find [VMSetup.md](VMSetup.md)
