@@ -14,5 +14,6 @@
   4. `mkV2Validator`
   5. `mkV1MintingPolicy`
   6. `mkV2MintingPolicy`
-* Supported `plutus-apps` checkout tags:
-  1. `next-node` (97b4c1da03faf9bc35f348802fb7927231657e75)
+* Supported checkout tags:
+  1. Release tag: 98ea2fb5c4b46aa80be8a4f9698b7bf1975a7490
+     * `plutus-apps` checkout tag: `next-node` (97b4c1da03faf9bc35f348802fb7927231657e75)
