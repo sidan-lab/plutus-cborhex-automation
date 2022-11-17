@@ -103,3 +103,4 @@ We also welcome any contributors on any suggestions and thoughts to make this in
 ## Other Resources / List of Other Related Projects
 1. [Helios](https://github.com/Hyperion-BT/Helios)
 2. [demeter.run](https://demeter.run/)
+3. [Cardano Syllabus](https://johnshearing.github.io/cardano_syllabus/)
