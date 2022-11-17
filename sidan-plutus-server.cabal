@@ -1,0 +1,53 @@
+cabal-version:      2.4
+name:               sidan-plutus-server
+version:            0.1.0.0
+synopsis:           This is the library for automation of creating haskell server endpoints returning dynamica plutus script cborhex.
+description:        
+bug-reports:        https://github.com/SIDANWhatever/plutus-cborhex-automation/issues
+license:            MIT
+author:             SIDANWhatever, alexeusgr
+maintainer:         wongkahinhinson@gmail.com, alexeusgr@gmail.com
+extra-source-files:
+    CHANGELOG.md
+    README.md
+
+common common-all
+   default-language:   Haskell2010
+   default-extensions: GADTs
+                     , TypeApplications
+                     , OverloadedStrings
+   ghc-options:        -Wall -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas -fno-strictness -fno-spec-constr -fno-specialise
+
+library
+   import:            common-all                   
+   exposed-modules:   SIDANPlutusServer
+   hs-source-dirs:    src
+   build-depends:     aeson
+                    , base ^>=4.14.1.0
+                    , deepseq >= 1.4.4.0
+                    , bytestring
+                    , cardano-api
+                    , cardano-crypto-class
+                    , cardano-ledger-core
+                    , cardano-ledger-shelley
+                    , cardano-wallet-core
+                    , containers
+                    , data-default
+                    , freer-extras
+                    , openapi3
+                    , playground-common
+                    , plutus-contract
+                    , plutus-ledger
+                    , plutus-ledger-api
+                    , plutus-ledger-constraints
+                    , plutus-pab
+                    , plutus-tx-plugin
+                    , plutus-tx
+                    , plutus-use-cases
+                    , prettyprinter
+                    , serialise
+                    , text
+                    , html-entities
+                    , plutus-script-utils
+                    , Spock
+                    , hvect ^>= 0.4.0.1

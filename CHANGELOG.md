@@ -4,4 +4,5 @@
 
 * First version. Released on an unsuspecting world.
 * branch `main` builds locally and on a remote server; `cabal run` locally produces 
->Hello, Haskell!
+
+## 0.0.0.2

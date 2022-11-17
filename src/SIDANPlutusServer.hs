@@ -1,23 +1,21 @@
 {-# LANGUAGE GADTs             #-}
 {-# LANGUAGE TypeApplications  #-}
-{-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
 
 module SIDANPlutusServer where
 
-import           Cardano.Api                 as API
+import           Cardano.Api                       as API
 import qualified Cardano.Api.SerialiseTextEnvelope as SAPI
-import           Cardano.Api.Shelley         (PlutusScript (..))
-import           Codec.Serialise             (serialise)
-import qualified Data.ByteString.Lazy        as LBS
-import qualified Data.ByteString.Short       as SBS
-import           Data.Text                   (pack)
-import qualified Plutus.V1.Ledger.Scripts    as PlutusV1
-import qualified Plutus.V2.Ledger.Api        as PlutusV2
-
+import           Cardano.Api.Shelley               (PlutusScript (..))
+import           Codec.Serialise                   (serialise)
+import qualified Data.ByteString.Lazy              as LBS
+import qualified Data.ByteString.Short             as SBS
+import           Data.HVect                        hiding (pack)
+import           Data.Text                         (pack)
+import qualified Plutus.V1.Ledger.Scripts          as PlutusV1
+import qualified Plutus.V2.Ledger.Api              as PlutusV2
 import           Web.Spock
 import           Web.Spock.Config
-import           Data.HVect       hiding (pack)
 
 type Api = SpockM () () () ()
 
