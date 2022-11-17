@@ -16,6 +16,7 @@ common common-all
 library
    import:            common-all                   
    exposed-modules:   Utils
+                    , SIDANPlutusServer
                     , TestingValidator
                     , ParamScriptAPI
 
@@ -47,6 +48,7 @@ library
                     , html-entities
                     , plutus-script-utils
                     , Spock
+                    , hvect ^>= 0.4.0.1
    hs-source-dirs:   src
    ghc-options:     -Wall -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas -fno-strictness -fno-spec-constr -fno-specialise
 

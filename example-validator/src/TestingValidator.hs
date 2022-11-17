@@ -45,7 +45,7 @@ data TestParam = TestParam {
   testNumber :: Integer,
   testPpkh   :: PaymentPubKeyHash
   }
-  deriving (Show, Generic, FromJSON, ToJSON, ToSchema)
+  deriving (Show, Generic, FromJSON, ToJSON)
 
 PlutusTx.makeLift ''TestParam
 PlutusTx.makeIsDataIndexed ''TestParam [('TestParam,0)]
