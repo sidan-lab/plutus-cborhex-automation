@@ -2,7 +2,14 @@
 {-# LANGUAGE TypeApplications  #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module SIDANPlutusServer where
+module SIDANPlutusServer (
+  createServer,
+  createEndpoint,
+  mkV1Validator,
+  mkV2Validator,
+  mkV1MintingPolicy,
+  mkV2MintingPolicy
+) where
 
 import           Cardano.Api                       as API
 import qualified Cardano.Api.SerialiseTextEnvelope as SAPI

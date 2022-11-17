@@ -1,5 +1,5 @@
 cabal-version:      2.4
-name:               example-validator
+name:               gimbalabs-example
 version:            0.1.0.0
 synopsis:           This is the example library of simple plutus script for testing out automation of plutus cborhex generation.
 description:        
@@ -15,9 +15,7 @@ common common-all
 
 library
    import:            common-all                   
-   exposed-modules:   Utils
-                    , SIDANPlutusServer
-                    , TestingValidator
+   exposed-modules:   TestingValidator
                     , ParamScriptAPI
 
    build-depends:     aeson
@@ -49,13 +47,14 @@ library
                     , plutus-script-utils
                     , Spock
                     , hvect ^>= 0.4.0.1
+                    , sidan-plutus-server
    hs-source-dirs:   src
    ghc-options:     -Wall -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas -fno-strictness -fno-spec-constr -fno-specialise
 
-executable example-validator
+executable run-sidan-plutus-server
     main-is:          Main.hs
     build-depends:    base ^>=4.14.3.0
-                    , example-validator
+                    , gimbalabs-example
 
     hs-source-dirs:   app
     default-language: Haskell2010

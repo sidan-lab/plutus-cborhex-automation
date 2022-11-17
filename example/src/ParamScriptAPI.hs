@@ -12,6 +12,3 @@ app :: SIDAN.Api
 app = do
   SIDAN.createEndpoint "validatorV1" $ SIDAN.mkV1Validator validator
   SIDAN.createEndpoint "validatorV2" $ SIDAN.mkV2Validator validator
-  -- SIDAN.createEndpoint "mintingPolicyV1" $ SIDAN.mkV2Validator validator
-  -- SIDAN.createEndpoint "mintingPolicyV2" $ SIDAN.mkV2Validator validator
-
