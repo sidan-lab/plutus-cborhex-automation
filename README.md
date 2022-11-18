@@ -33,6 +33,11 @@ cabal run sidan-plutus-server
 3. Allow for a while of build time, you could then see the local server is up for example validator.
 > Spock is running on port 8080
 
+4. Try the endpoint!
+```
+curl -X POST http://localhost:8080/validatorV1 -H "Content-Type: application/json" -d '{"testNumber": 245324,"testPpkh": {"unPaymentPubKeyHash": {"getPubKeyHash": "8f2ac4b2a57a90feb7717c7361c7043af6c3646e9db2b0e616482f73"}}}'
+```
+
 ## API Documentation
 For full API documentation please find it [here](./documentation/APIDoc.md)
 
