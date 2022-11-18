@@ -16,7 +16,7 @@ In the long-term, an API for compiling plutus scripts can be served via Dandelio
 source-repository-package
   type: git
   location: https://github.com/SIDANWhatever/plutus-cborhex-automation
-  tag: 98ea2fb5c4b46aa80be8a4f9698b7bf1975a7490
+  tag: fb044b39dd8cbfe166b0fec376038f7980c3a398
 ```
 > Note: This checkout tag is corresponding to `next-node` tag of `plutus-apps`. To avoid package version conflict, please follow the same exact content of `cabal.project` inside `example` sub-dir (remember to change the `packages` tag on line 4).
 
