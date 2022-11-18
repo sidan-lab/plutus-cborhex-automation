@@ -5,7 +5,7 @@
 * First version. Released on an unsuspecting world.
 * branch `main` builds locally and on a remote server; `cabal run` locally produces 
 
-## 0.1.0.0 -- 2022-11-17
+## 0.1.0.0 -- 2022-11-18
 
 * Test release with 6 endpoints:
   1. `createServer`

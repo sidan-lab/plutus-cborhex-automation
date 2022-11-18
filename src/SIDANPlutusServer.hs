@@ -3,6 +3,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 module SIDANPlutusServer (
+  Api,
   createServer,
   createEndpoint,
   mkV1Validator,
