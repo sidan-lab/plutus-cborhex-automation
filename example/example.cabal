@@ -51,7 +51,7 @@ library
    hs-source-dirs:   src
    ghc-options:     -Wall -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas -fno-strictness -fno-spec-constr -fno-specialise
 
-executable run-sidan-plutus-server
+executable sidan-plutus-server
     main-is:          Main.hs
     build-depends:    base ^>=4.14.3.0
                     , gimbalabs-example
