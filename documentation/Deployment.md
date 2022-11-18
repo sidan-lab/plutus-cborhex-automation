@@ -123,11 +123,11 @@ cd ~/.ssh
 ssh -i "testbuild.pem" whatever@ec2-xx-xxx-xx-xxx.us-west-2.compute.amazonaws.com
 ```
 
-2. Entering nix-shell with IOHK binaries, here we checkout latest tag `7b4c1da03faf9bc35f348802fb7927231657e75`
+2. Entering nix-shell with IOHK binaries, here we checkout the `next-node` tag `97b4c1da03faf9bc35f348802fb7927231657e75`
 
 ```
 cd ~/validator-endpoint/plutus-apps
-git checkout 7b4c1da03faf9bc35f348802fb7927231657e75
+git checkout 97b4c1da03faf9bc35f348802fb7927231657e75
 nix-shell
 ```
 
@@ -137,9 +137,9 @@ nix-shell
 cabal update
 ```
 
-4. Start the `example-validator` backend
+4. Start the `example` backend
 
 ```
-cd ~/plutus-cborhex-automation/example-validator
-cabal run example-validator.cabal
+cd ~/plutus-cborhex-automation/example
+cabal run sidan-plutus-server
 ```
