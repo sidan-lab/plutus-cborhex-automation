@@ -11,45 +11,27 @@ In the long-term, an API for compiling plutus scripts can be served via Dandelio
 
 ## Quick Start
 
-1. Include the `source-repository-package` in the `cabal.project` for your Plutus project:
+1. Enter your `nix-shell` of your `plutus-apps` using checkout tag `97b4c1da03faf9bc35f348802fb7927231657e75`
+
+* Inside `plutus-apps`
 ```
-source-repository-package
-  type: git
-  location: https://github.com/SIDANWhatever/plutus-cborhex-automation
-  tag: fb044b39dd8cbfe166b0fec376038f7980c3a398
-```
-> Note: This checkout tag is corresponding to `next-node` tag of `plutus-apps`. To avoid package version conflict, please follow the same exact content of `cabal.project` inside `example` sub-dir (remember to change the `packages` tag on line 4).
-
-2. Include the `sidan-plutus-server` in your `build-depends`
-3. Configure your endpoints like below:
-```haskell
-{-# LANGUAGE OverloadedStrings #-}
-
-module ParamScriptAPI where
-
-import qualified SIDANPlutusServer    as SIDAN
-import           TestingValidator     as TV
-import           TestingMintingPolicy as TMP
-
-main :: IO ()
-main = SIDAN.createServer app
-
-app :: SIDAN.Api
-app = do
-  SIDAN.createEndpoint "your-custom-route-1" $ SIDAN.mkV1Validator TV.validator
-  SIDAN.createEndpoint "your-custom-route-2" $ SIDAN.mkV2MintingPolicy TMP.mintingPolicy
+git pull
+git checkout 97b4c1da03faf9bc35f348802fb7927231657e75
+nix-shell
 ```
 
-where your `TV.validator` and `TMP.mintingPolicy` have below type signatures:
-```haskell
-import qualified Plutus.V1.Ledger.Scripts          as PlutusV1
-import qualified Plutus.V2.Ledger.Api              as PlutusV2
-
-validator :: YourParam -> PlutusV1.Validator
-mintingPolicy :: YourParam -> PlutusV2.MintingPolicy
+2. Clone this repository says at Desktop, go to the example folder and run:
+```
+cd ~
+```
+```
+git clone https://github.com/SIDANWhatever/plutus-cborhex-automation.git
+cd plutus-cborhex-automation/example
+cabal run sidan-plutus-server
 ```
 
-4. Starting your server by running the `main` function, and the endpoints would be served at port `8080`.
+3. Allow for a while of build time, you could then see the local server is up for example validator.
+> Spock is running on port 8080
 
 ## API Documentation
 For full API documentation please find it [here](./documentation/APIDoc.md)
