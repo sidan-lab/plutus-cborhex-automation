@@ -17,6 +17,10 @@ library
    import:            common-all                   
    exposed-modules:   TestingValidator
                     , ParamScriptAPI
+                    , ContributorToken.ReferenceValidator
+                    , ContributorToken.Compiler
+                    , ContributorToken.Types
+                  --   , DevelopmentSourceCode
 
    build-depends:     aeson
                     , base ^>=4.14.1.0

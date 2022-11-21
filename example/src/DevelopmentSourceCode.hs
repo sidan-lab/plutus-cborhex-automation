@@ -2,7 +2,7 @@
 {-# LANGUAGE TypeApplications  #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module SIDANPlutusServer (
+module DevelopmentSourceCode (
   Api,
   createServer,
   createEndpoint,
