@@ -20,7 +20,10 @@ library
                     , ContributorToken.ReferenceValidator
                     , ContributorToken.Compiler
                     , ContributorToken.Types
-                  --   , DevelopmentSourceCode
+
+                    , Dev.DevPlutusServer
+                    , Dev.DevInstances
+                    , Dev.DevDefaultOrphans
 
    build-depends:     aeson
                     , base ^>=4.14.1.0

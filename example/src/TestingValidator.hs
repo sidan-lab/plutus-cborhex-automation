@@ -27,7 +27,7 @@ import Prelude (IO, Semigroup (..), Show (..), String)
 import Ledger (POSIXTime, to, from, contains)
 import Ledger.Address (PaymentPubKeyHash, Address, unPaymentPubKeyHash)
 import Ledger.Ada as Ada
-import Ledger.Value
+-- import Ledger.Value
 import qualified Plutus.Script.Utils.V1.Typed.Scripts.Validators as Scripts
 import qualified Plutus.Script.Utils.V1.Scripts as Scripts
 import qualified Plutus.V1.Ledger.Scripts as Plutus
@@ -41,20 +41,26 @@ import Text.Printf (printf)
 import Data.Bool (Bool(True))
 import Playground.Contract (ToSchema)
 
+import qualified Plutus.V1.Ledger.Value            as PlutusV1
+import qualified Plutus.V2.Ledger.Api              as PlutusV2
+-- import DevelopmentSourceCode
+
 data TestParam = TestParam {
+  testTN     :: PlutusV2.TokenName,
+  testCS     :: PlutusV2.CurrencySymbol,
+  testAC     :: PlutusV1.AssetClass,
+  testTime   :: PlutusV2.POSIXTime,
+  testAddr   :: PlutusV2.Address,
+  testPkh    :: PlutusV2.PubKeyHash,
+  testVH     :: PlutusV2.ValidatorHash,
+  testSC     :: PlutusV2.StakingCredential,
   testNumber :: Integer,
   testPpkh   :: PaymentPubKeyHash
-  }
-  deriving (Show, Generic, FromJSON, ToJSON)
+} deriving (Show, Generic, FromJSON, ToJSON)
 
 PlutusTx.makeLift ''TestParam
 PlutusTx.makeIsDataIndexed ''TestParam [('TestParam,0)]
 
--- data TestDatum
---   = TestDatum Integer Integer Integer
---   deriving (Show, Generic, FromJSON, ToJSON)
-
--- PlutusTx.makeIsDataIndexed ''TestDatum [('TestDatum,0)]
 
 {-# INLINEABLE mkValidator #-}
 mkValidator :: TestParam -> Integer -> () -> Plutus.ScriptContext -> Bool
