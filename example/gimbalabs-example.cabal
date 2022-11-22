@@ -16,14 +16,15 @@ common common-all
 library
    import:            common-all                   
    exposed-modules:   TestingValidator
+                    , ParamDemoValidator
                     , ParamScriptAPI
                     , ContributorToken.ReferenceValidator
                     , ContributorToken.Compiler
                     , ContributorToken.Types
 
-                    , Dev.DevPlutusServer
-                    , Dev.DevInstances
-                    , Dev.DevDefaultOrphans
+                  --   , Dev.DevPlutusServer
+                  --   , Dev.DevInstances
+                  --   , Dev.DevDefaultOrphans
 
    build-depends:     aeson
                     , base ^>=4.14.1.0

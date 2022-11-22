@@ -31,5 +31,5 @@
   8. `ValidatorHash`
   9. `StakingCredential`
 - Supported checkout tags:
-  1. Release tag: dc122c4524f3c4bb34e2a8a951f0630554b14ba0
+  1. Release tag: eb4c50e73b3263225bbe2eb5b5c1f15ec0f2c652
      - `plutus-apps` checkout tag: `next-node` (97b4c1da03faf9bc35f348802fb7927231657e75)

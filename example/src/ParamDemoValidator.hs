@@ -14,7 +14,7 @@
 -- {-# OPTIONS_GHC -fplugin-opt PlutusTx.Plugin:no-context #-}
 -- {-# OPTIONS_GHC -fplugin-opt PlutusTx.Plugin:remove-trace #-}
 
-module TestingValidator where
+module ParamDemoValidator where
 
 -- import ThreadToken.ThreadToken
 import Control.Monad hiding (fmap)
@@ -46,6 +46,14 @@ import qualified Plutus.V2.Ledger.Api              as PlutusV2
 import           SIDANDefaultOrphans
 
 data TestParam = TestParam {
+  testTN     :: PlutusV2.TokenName,
+  testCS     :: PlutusV2.CurrencySymbol,
+  testAC     :: PlutusV1.AssetClass,
+  testTime   :: PlutusV2.POSIXTime,
+  testAddr   :: PlutusV2.Address,
+  testPkh    :: PlutusV2.PubKeyHash,
+  testVH     :: PlutusV2.ValidatorHash,
+  testSC     :: PlutusV2.StakingCredential,
   testNumber :: Integer,
   testPpkh   :: PaymentPubKeyHash
 } deriving (Show, Generic, FromJSON, ToJSON)

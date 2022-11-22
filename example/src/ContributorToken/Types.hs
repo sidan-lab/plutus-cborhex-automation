@@ -21,7 +21,7 @@ import              PlutusTx.Prelude    hiding  (Semigroup (..), unless)
 import              Prelude                     (Show (..))
 import  qualified   Prelude                 as  Pr
 import              Data.Aeson                  (FromJSON, ToJSON)
-import              Dev.DevDefaultOrphans()
+import              SIDANDefaultOrphans()
 
 -- ReferenceParams
 data ReferenceParams = ReferenceParams

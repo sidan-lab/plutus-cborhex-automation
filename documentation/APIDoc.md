@@ -8,7 +8,7 @@
 source-repository-package
   type: git
   location: https://github.com/SIDANWhatever/plutus-cborhex-automation
-  tag: dc122c4524f3c4bb34e2a8a951f0630554b14ba0
+  tag: eb4c50e73b3263225bbe2eb5b5c1f15ec0f2c652
 ```
 
 > Note: This checkout tag is corresponding to `next-node` tag of `plutus-apps`. To avoid package version conflict, please follow the same exact content of `cabal.project` inside `example` sub-dir (remember to change the `packages` tag on line 4).
@@ -45,10 +45,13 @@ import qualified SIDANPlutusServer   as SIDAN
 6. `mkV2MintingPolicy`
    > To make PlutusV2 MintingPolicy, which is to be attached to one custom endpoint
 
-### Important note: You have to derive `FromJSON` and `ToJSON` instances for your custom param in order to utilize the above APIs.
+### Important note: You have to derive `FromJSON` and `ToJSON` instances for your custom param in order to utilize the above APIs
+
+> IOG has wrapped some of its `FromJSON` and `ToJSON` instances in their Orphans, in case an error of no instances found for some Plutus data type, you can do `import SIDANDefaultOrphans()`, where we help to catch those orphans import. It is also always recommended.
 
 ```haskell
 import Data.Aeson (FromJSON, ToJSON)
+import SIDANDefaultOrphans()
 
 data TestParam = TestParam {
   testNumber :: Integer,
@@ -65,10 +68,10 @@ data TestParam = TestParam {
 module ParamScriptAPI where
 
 import qualified SIDANPlutusServer   as SIDAN
-import           V1Validator         as V1V
-import           V2Validator         as V2V
-import           V1Validator         as V1V
-import           V1Validator         as V1V
+import qualified V1Validator         as V1V
+import qualified V2Validator         as V2V
+import qualified V1Validator         as V1V
+import qualified V1Validator         as V1V
 
 main :: IO ()
 main = SIDAN.createServer app
@@ -134,7 +137,7 @@ You can see we have to wrapped our `String` input from JSON body to the type `Pa
 
 ## Supported `plutus-apps` checkout tags:
 
-1. Release tag: fb044b39dd8cbfe166b0fec376038f7980c3a398
+1. Release tag: eb4c50e73b3263225bbe2eb5b5c1f15ec0f2c652
    - `plutus-apps` checkout tag: `next-node` (97b4c1da03faf9bc35f348802fb7927231657e75)
 
 ### Please request if you want us to support for `plutus-apps` checkout tag for your Dapp!
