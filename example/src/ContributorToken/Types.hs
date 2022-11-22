@@ -25,8 +25,8 @@ import              SIDANDefaultOrphans()
 
 -- ReferenceParams
 data ReferenceParams = ReferenceParams
-    { adminPolicyID       :: !CurrencySymbol
-    , contributorPolicyID :: !CurrencySymbol
+    { adminPolicyID       :: CurrencySymbol
+    , contributorPolicyID :: CurrencySymbol
     } deriving (Pr.Eq, Pr.Ord, Show, Generic, FromJSON, ToJSON)
 
 PlutusTx.makeLift ''ReferenceParams
@@ -36,8 +36,8 @@ PlutusTx.makeLift ''ReferenceParams
 -- Once MVP is working, add something like "Completed Project Hashes"
 data ContributorDatum = ContributorDatum
     { masteryLevels     :: Map BuiltinByteString Integer
-    , contribCount      :: !Integer
-    , alias             :: !BuiltinByteString
+    , contribCount      :: Integer
+    , alias             :: BuiltinByteString
     }
 
 PlutusTx.unstableMakeIsData ''ContributorDatum
