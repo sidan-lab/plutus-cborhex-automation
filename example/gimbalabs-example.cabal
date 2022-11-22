@@ -18,6 +18,8 @@ library
    exposed-modules:   TestingValidator
                     , ParamDemoValidator
                     , ParamScriptAPI
+                    , Faucet.FaucetValidatorScript
+                    , Faucet.FaucetValidatorCompiler
                     , GBTE.ApprovalMinter
                     , GBTE.Compiler
                     , GBTE.EscrowValidator
