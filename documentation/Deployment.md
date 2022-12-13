@@ -21,12 +21,14 @@ Volume 1 (AMI Root) (Custom) 50 GiB gp2
 Create SSH key
 ```
 
+> Note: This is the minimum server config, otherwise the nix-shell session might be `Killed` in either entering the `nix-shell` or doing `cabal repl`.
+
 2. Enter into VM
 
 3. Add user, make it `sudo`, change user to newly created one
 
 ```
-sudo adduser whatever
+sudo adduser sidan
 ```
 
 > - after typing this command following prompts would up
@@ -41,11 +43,11 @@ sudo adduser whatever
 > 8. Is the info correct
 
 ```
-sudo gpasswd -a whatever sudo
+sudo gpasswd -a sidan sudo
 ```
 
 ```
-su whatever
+su sidan
 ```
 
 > - have to type password here
@@ -75,7 +77,7 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 4. Set the environment
 
 ```
-. /home/whatever/.nix-profile/etc/profile.d/nix.sh
+. /home/sidan/.nix-profile/etc/profile.d/nix.sh
 ```
 
 5. Adding IOHK caches
@@ -120,7 +122,7 @@ exit
 
 ```
 cd ~/.ssh
-ssh -i "testbuild.pem" whatever@ec2-xx-xxx-xx-xxx.us-west-2.compute.amazonaws.com
+ssh -i "testbuild.pem" sidan@ec2-xx-xxx-xx-xxx.us-west-2.compute.amazonaws.com
 ```
 
 2. Entering nix-shell with IOHK binaries, here we checkout the `next-node` tag `97b4c1da03faf9bc35f348802fb7927231657e75`
