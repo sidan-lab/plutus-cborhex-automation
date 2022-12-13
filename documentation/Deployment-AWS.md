@@ -58,7 +58,7 @@ git clone https://github.com/SIDANWhatever/plutus-cborhex-automation.git
 4. Copying the built packages to your project directory, this might take a while
 
 ```
-sudo cp -r plutus-template/dist-newstyle/ plutus-cborhex-automation/example
+cp -r plutus-template/dist-newstyle/ plutus-cborhex-automation/example
 ```
 
 5. Start your project! Our example has an executable defined to start the server, so we do
