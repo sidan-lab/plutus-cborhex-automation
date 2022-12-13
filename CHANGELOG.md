@@ -33,3 +33,10 @@
 - Supported checkout tags:
   1. Release tag: eb4c50e73b3263225bbe2eb5b5c1f15ec0f2c652
      - `plutus-apps` checkout tag: `next-node` (97b4c1da03faf9bc35f348802fb7927231657e75)
+
+## 0.1.0.2 -- 2022-12-13
+
+- Removing redundancy in package import
+- Supported checkout tags:
+  1. Release tag: 93af478c89e861a4803acad0a194bcbec73dfd8f
+     - `plutus-apps` checkout tag: `next-node` (97b4c1da03faf9bc35f348802fb7927231657e75)

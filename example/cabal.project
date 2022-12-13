@@ -362,4 +362,4 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/SIDANWhatever/plutus-cborhex-automation
-  tag: eb4c50e73b3263225bbe2eb5b5c1f15ec0f2c652
+  tag: 93af478c89e861a4803acad0a194bcbec73dfd8f
