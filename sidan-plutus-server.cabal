@@ -25,31 +25,13 @@ library
                     , SIDANInstances
    hs-source-dirs:    src
    build-depends:     aeson
-                    , base ^>=4.14.1.0
-                    , deepseq >= 1.4.4.0
                     , bytestring
                     , cardano-api
-                    , cardano-crypto-class
                     , cardano-ledger-core
-                    , cardano-ledger-shelley
-                    , cardano-wallet-core
-                    , containers
-                    , data-default
-                    , freer-extras
-                    , openapi3
-                    , playground-common
-                    , plutus-contract
                     , plutus-ledger
                     , plutus-ledger-api
-                    , plutus-ledger-constraints
-                    , plutus-pab
-                    , plutus-tx-plugin
-                    , plutus-tx
-                    , plutus-use-cases
-                    , prettyprinter
                     , serialise
                     , text
-                    , html-entities
-                    , plutus-script-utils
                     , Spock
                     , hvect ^>= 0.4.0.1
+                    , base ^>=4.14.1.0
