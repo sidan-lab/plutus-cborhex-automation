@@ -22,33 +22,33 @@ Using this guide, you still need to take care of the Devops needed in AWS, such 
 ssh -i "testbuild.pem" ubuntu@ec2-xx-xxx-xx-xxx.us-west-2.compute.amazonaws.com
 ```
 
-## Using the image
-
-The pre-compiled image is stored in the user `sidan`. So, please start the server under the user `sidan`.
-
-1. Changing user
-
+- Run the below to copy your ssh key to `sidan` user
 ```
-su sidan
+sudo cp -r /home/ubuntu/.ssh /home/sidan/
+sudo chown sidan /home/sidan/.ssh
+sudo chown sidan /home/sidan/.ssh/authorized_keys
 ```
 
 > Note: The default password for `sidan` is `whatever`
 
-2. Entering `nix-shell`
+## Using the image
+
+The pre-compiled image is stored in the user `sidan`. So, please start the server under the user `sidan`.
+
+0. Connecting to the server as the root user
+
+```
+ssh -i "testbuild.pem" sidan@ec2-xx-xxx-xx-xxx.us-west-2.compute.amazonaws.com
+```
+
+1. Entering `nix-shell`
 
 ```
 cd ~/sidan-plutus-server/plutus-apps
-```
-
-```
-. /home/sidan/.nix-profile/etc/profile.d/nix.sh
-```
-
-```
 nix-shell
 ```
 
-3. Cloning your own project, we use the example repository as example
+2. Cloning your own project, we use the example repository as example
 
 ```
 cd ~/sidan-plutus-server
