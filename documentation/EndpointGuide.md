@@ -8,6 +8,7 @@ Here we have the guide of supplying JSON body for different Plutus common data t
 >
 > ```haskell
 > import SIDANDefaultOrphans()
+> import GHC.Generics (Generic)
 >
 > data TestParam = TestParam {
 >  testParam   :: TokenName
