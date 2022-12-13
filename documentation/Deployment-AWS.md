@@ -69,3 +69,7 @@ cabal run sidan-plutus-server &
 ```
 
 > Note: Adding the `&` at the end to make the server run in the background
+
+## Support US
+
+The AMI is created for community use and free of charge. To support us, please consider staking your ADA with our stake pool with ticker `SIDAN`. Thank you!
