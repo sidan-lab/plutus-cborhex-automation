@@ -17,87 +17,6 @@ Here we have the guide of supplying JSON body for different Plutus common data t
 
 ## JSON Body Examples
 
-### `TokenName`
-
-- Parameter type
-
-```haskell
-data TestParam = TestParam {
-  testParam   :: TokenName
-} deriving (Show, Generic, FromJSON, ToJSON)
-```
-
-- JSON body
-
-```json
-{
-  "testParam": { "unTokenName": "67696d62616c" }
-}
-```
-
-### `CurrencySymbol`
-
-- Parameter type
-
-```haskell
-data TestParam = TestParam {
-  testParam   :: CurrencySymbol
-} deriving (Show, Generic, FromJSON, ToJSON)
-```
-
-- JSON body
-
-```json
-{
-  "testParam": {
-    "unCurrencySymbol": "2b0a04a7b60132b1805b296c7fcb3b217ff14413991bf76f72663c30"
-  }
-}
-```
-
-### `AssetClass`
-
-- Parameter type
-
-```haskell
-data TestParam = TestParam {
-  testParam   :: AssetClass
-} deriving (Show, Generic, FromJSON, ToJSON)
-```
-
-- JSON body
-
-```json
-{
-  "testParam": {
-    "unAssetClass": [
-      {
-        "unCurrencySymbol": "2b0a04a7b60132b1805b296c7fcb3b217ff14413991bf76f72663c30"
-      },
-      { "unTokenName": "67696d62616c" }
-    ]
-  }
-}
-```
-
-### `POSIXTime`
-
-- Parameter type
-
-```haskell
-data TestParam = TestParam {
-  testParam   :: POSIXTime
-} deriving (Show, Generic, FromJSON, ToJSON)
-```
-
-- JSON body
-
-```json
-{
-  "testParam": 1643235300000
-}
-```
-
 ### `Address`
 
 - Parameter type
@@ -132,13 +51,13 @@ testParam = Address {
 }
 ```
 
-### `ValidatorHash`
+### `AssetClass`
 
 - Parameter type
 
 ```haskell
 data TestParam = TestParam {
-  testParam   :: ValidatorHash
+  testParam   :: AssetClass
 } deriving (Show, Generic, FromJSON, ToJSON)
 ```
 
@@ -146,37 +65,33 @@ data TestParam = TestParam {
 
 ```json
 {
-  "testParam": "28700837facbdbc51cff052012ed1c3286112c786d0ce2f019525c76"
+  "testParam": {
+    "unAssetClass": [
+      {
+        "unCurrencySymbol": "2b0a04a7b60132b1805b296c7fcb3b217ff14413991bf76f72663c30"
+      },
+      { "unTokenName": "67696d62616c" }
+    ]
+  }
 }
 ```
 
-### `StakingCredential`
-
-TODO: Adding in sensible example content
+### `CurrencySymbol`
 
 - Parameter type
 
 ```haskell
 data TestParam = TestParam {
-  testParam   :: StakingCredential
+  testParam   :: CurrencySymbol
 } deriving (Show, Generic, FromJSON, ToJSON)
 ```
 
-- Example 1
-
-```haskell
-testParam :: StakingCredential
-testParam = StakingHash (ScriptCredential 28700837facbdbc51cff052012ed1c3286112c786d0ce2f019525c76)
-```
+- JSON body
 
 ```json
 {
   "testParam": {
-    "tag": "StakingHash",
-    "contents": {
-      "tag": "ScriptCredential",
-      "contents": "28700837facbdbc51cff052012ed1c3286112c786d0ce2f019525c76"
-    }
+    "unCurrencySymbol": "2b0a04a7b60132b1805b296c7fcb3b217ff14413991bf76f72663c30"
   }
 }
 ```
@@ -216,6 +131,90 @@ data TestParam = TestParam {
 }
 ```
 
+### `POSIXTime`
+
+- Parameter type
+
+```haskell
+data TestParam = TestParam {
+  testParam   :: POSIXTime
+} deriving (Show, Generic, FromJSON, ToJSON)
+```
+
+- JSON body
+
+```json
+{
+  "testParam": 1643235300000
+}
+```
+
+### `StakingCredential`
+
+TODO: Adding in sensible example content
+
+- Parameter type
+
+```haskell
+data TestParam = TestParam {
+  testParam   :: StakingCredential
+} deriving (Show, Generic, FromJSON, ToJSON)
+```
+
+- Example 1
+
+```haskell
+testParam :: StakingCredential
+testParam = StakingHash (ScriptCredential 28700837facbdbc51cff052012ed1c3286112c786d0ce2f019525c76)
+```
+
+```json
+{
+  "testParam": {
+    "tag": "StakingHash",
+    "contents": {
+      "tag": "ScriptCredential",
+      "contents": "28700837facbdbc51cff052012ed1c3286112c786d0ce2f019525c76"
+    }
+  }
+}
+```
+
+### `TokenName`
+
+- Parameter type
+
+```haskell
+data TestParam = TestParam {
+  testParam   :: TokenName
+} deriving (Show, Generic, FromJSON, ToJSON)
+```
+
+- JSON body
+
+```json
+{
+  "testParam": { "unTokenName": "67696d62616c" }
+}
+```
+
+### `ValidatorHash`
+
+- Parameter type
+
+```haskell
+data TestParam = TestParam {
+  testParam   :: ValidatorHash
+} deriving (Show, Generic, FromJSON, ToJSON)
+```
+
+- JSON body
+
+```json
+{
+  "testParam": "28700837facbdbc51cff052012ed1c3286112c786d0ce2f019525c76"
+}
+```
 ## A Complete Example:
 
 For our `ParamDemoValidator.hs`, we could supply the below json for the endpoint call:
